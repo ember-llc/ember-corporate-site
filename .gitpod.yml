@@ -1,0 +1,9 @@
+tasks:
+  - init: |
+      echo 'TODO: build project'
+    command: |
+      npx serve
+ports:
+  - port: 3000
+    visibility: public
+    onOpen: open-preview
