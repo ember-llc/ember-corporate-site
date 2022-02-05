@@ -52,6 +52,10 @@
       padding-left: 10px;
       box-sizing: border-box;
 
+      mat-card {
+        padding: 5px;
+      }
+
       mat-list-item {
         font-size: 15px;
         height: 30px;
