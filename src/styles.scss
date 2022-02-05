@@ -1,39 +1,75 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+@use "@angular/material" as mat;
 @include mat.core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$ember-primary: mat.define-palette(mat.$indigo-palette);
-$ember-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+// Available color palettes: https://material.io/design/color/
 
-// The warn palette is optional (defaults to red).
-$ember-warn: mat.define-palette(mat.$red-palette);
+//Dark Theme
+$frontend-dark-primary: mat.define-palette(mat.$orange-palette, A400, A200, A700);
+$frontend-dark-accent: mat.define-palette(mat.$yellow-palette, A400, A200, A700);
+$frontend-dark-warn: mat.define-palette(mat.$deep-orange-palette, A400, A200, A700);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$ember-theme: mat.define-light-theme((
-  color: (
-    primary: $ember-primary,
-    accent: $ember-accent,
-    warn: $ember-warn,
+$ember-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $frontend-dark-primary,
+      accent: $frontend-dark-accent,
+      warn: $frontend-dark-warn
+    )
   )
-));
+);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($ember-theme);
+//Light Theme
+$frontend-primary: mat.define-palette(mat.$orange-palette, 400, 200, 600);
+$frontend-accent: mat.define-palette(mat.$yellow-palette, 400, 200, 600);
+$frontend-warn: mat.define-palette(mat.$deep-orange-palette, 400, 200, 600);
 
-/* You can add global styles to this file, and also import other style files */
+$ember-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $frontend-primary,
+      accent: $frontend-accent,
+      warn: $frontend-warn
+    )
+  )
+);
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.ember-dark-theme {
+  @include mat.all-component-themes($ember-dark-theme);
+
+  a[mat-list-item].active,
+  a[mat-list-item].active:focus {
+    background: mat.get-color-from-palette($frontend-dark-primary, "default");
+    color: mat.get-color-from-palette($frontend-dark-primary, "default-contrast");
+    border-radius: 10px;
+
+    &:hover {
+      background: mat.get-color-from-palette($frontend-dark-accent, "default");
+      color: mat.get-color-from-palette($frontend-dark-accent, "default-contrast");
+    }
+  }
+}
+
+.ember-light-theme {
+  @include mat.all-component-themes($ember-light-theme);
+
+  a[mat-list-item].active,
+  a[mat-list-item].active:focus {
+    background: mat.get-color-from-palette($frontend-primary, "default");
+    color: mat.get-color-from-palette($frontend-primary, "default-contrast");
+    border-radius: 10px;
+
+    &:hover {
+      background: mat.get-color-from-palette($frontend-dark-accent, "default");
+      color: mat.get-color-from-palette($frontend-dark-accent, "default-contrast");
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
