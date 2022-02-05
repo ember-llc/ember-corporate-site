@@ -9,9 +9,12 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { AppFrameComponent } from "./components/app-frame/app-frame.component";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatCardModule } from "@angular/material/card";
+import { HomeComponent } from "./pages/home/home.component";
 
 @NgModule({
-  declarations: [AppComponent, AppFrameComponent],
+  declarations: [AppComponent, AppFrameComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +22,9 @@ import { AppFrameComponent } from "./components/app-frame/app-frame.component";
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
