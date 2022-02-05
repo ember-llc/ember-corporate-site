@@ -1,11 +1,65 @@
 :host {
+  padding: 5px;
   display: flex;
+  align-items: center;
+  flex-direction: column;
 
-  mat-card {
-    margin: 5px;
+  .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 0px;
+    }
   }
 
-  div[mat-card-avatar] mat-icon {
-    font-size: 40px;
+  .process {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    mat-card {
+      margin: 5px;
+      max-width: 275px;
+      min-width: 210px;
+    }
+
+    div[mat-card-avatar] mat-icon {
+      font-size: 40px;
+    }
+  }
+
+  .two-columns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .how-we-work {
+      width: 49%;
+      min-width: 310px;
+      h3 {
+        text-align: center;
+      }
+    }
+
+    .offerings {
+      width: 49%;
+      min-width: 310px;
+      padding-left: 10px;
+      box-sizing: border-box;
+
+      mat-list-item {
+        font-size: 15px;
+        height: 30px;
+      }
+
+      h3 {
+        text-align: center;
+      }
+    }
   }
 }

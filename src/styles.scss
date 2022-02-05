@@ -18,21 +18,6 @@ $ember-dark-theme: mat.define-dark-theme(
   )
 );
 
-//Light Theme
-$frontend-primary: mat.define-palette(mat.$orange-palette, 400, 200, 600);
-$frontend-accent: mat.define-palette(mat.$yellow-palette, 400, 200, 600);
-$frontend-warn: mat.define-palette(mat.$deep-orange-palette, 400, 200, 600);
-
-$ember-light-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $frontend-primary,
-      accent: $frontend-accent,
-      warn: $frontend-warn
-    )
-  )
-);
-
 .ember-dark-theme {
   @include mat.all-component-themes($ember-dark-theme);
 
@@ -40,22 +25,6 @@ $ember-light-theme: mat.define-light-theme(
   a[mat-list-item].active:focus {
     background: mat.get-color-from-palette($frontend-dark-primary, "default");
     color: mat.get-color-from-palette($frontend-dark-primary, "default-contrast");
-    border-radius: 10px;
-
-    &:hover {
-      background: mat.get-color-from-palette($frontend-dark-accent, "default");
-      color: mat.get-color-from-palette($frontend-dark-accent, "default-contrast");
-    }
-  }
-}
-
-.ember-light-theme {
-  @include mat.all-component-themes($ember-light-theme);
-
-  a[mat-list-item].active,
-  a[mat-list-item].active:focus {
-    background: mat.get-color-from-palette($frontend-primary, "default");
-    color: mat.get-color-from-palette($frontend-primary, "default-contrast");
     border-radius: 10px;
 
     &:hover {

@@ -12,6 +12,8 @@ import { AppFrameComponent } from "./components/app-frame/app-frame.component";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from "./pages/home/home.component";
+import { MatListModule } from "@angular/material/list";
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [AppComponent, AppFrameComponent, HomeComponent],
@@ -24,7 +26,9 @@ import { HomeComponent } from "./pages/home/home.component";
     MatButtonModule,
     MatTooltipModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
