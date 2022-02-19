@@ -4,6 +4,10 @@
   display: block;
   overflow: hidden;
 
+  mat-toolbar {
+    overflow: hidden;
+  }
+
   .ember-content {
     margin-left: 30px;
     margin-right: 30px;

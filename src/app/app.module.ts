@@ -14,9 +14,11 @@ import { MatCardModule } from "@angular/material/card";
 import { HomeComponent } from "./pages/home/home.component";
 import { MatListModule } from "@angular/material/list";
 import { MatDividerModule } from "@angular/material/divider";
+import { AppFooterComponent } from "./components/app-footer/app-footer.component";
+import { ParticlesComponent } from "./components/particles/particles.component";
 
 @NgModule({
-  declarations: [AppComponent, AppFrameComponent, HomeComponent],
+  declarations: [AppComponent, AppFrameComponent, HomeComponent, AppFooterComponent, ParticlesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

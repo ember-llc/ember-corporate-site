@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  padding-top: 20px;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+}
+
+body.ember-dark-theme :host {
+  background-color: #303030;
+  color: white;
+}

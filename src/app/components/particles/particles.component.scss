@@ -1,0 +1,58 @@
+:host {
+  $total: 50;
+  $duration: 8s;
+
+  .wrap {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    animation: rotate $duration infinite linear;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotateY(360deg) rotateX(360deg);
+    }
+  }
+
+  .c {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  @for $i from 1 through $total {
+    $z: (random(360) * 1deg);
+    $y: (random(360) * 1deg);
+    $hue: ((40 / $total * $i));
+
+    .c:nth-child(#{$i}) {
+      animation: orbit#{$i} $duration ($i * 0.01s) forwards, flicker#{$i} $duration ($i * 0.25s) infinite;
+      background-color: hsla($hue, 100%, 50%, 1);
+    }
+
+    @keyframes flicker#{$i} {
+      20% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes orbit#{$i} {
+      100% {
+        transform: rotateZ(-$z) rotateY($y) translateX(100px) rotateZ($z);
+      }
+    }
+  }
+}
